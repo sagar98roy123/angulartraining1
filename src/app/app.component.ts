@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angapp01';
+  title: string;
+  imgs:string[];
+  logo:string;
+  na:string;
+  imgIndex:number;
+
+  constructor(){
+    this.title="My First Angular project";
+    this.imgs=[
+      "assets/images/w1.jpeg",
+      "assets/images/w2.jpeg",
+      "assets/images/w3.jpeg"
+    ];
+    this.imgIndex=0;
+    this.logo=this.imgs[this.imgIndex];
+    this.na="Not Available"
+  }
+  toggleLogo(){
+    this.imgIndex=(this.imgIndex+1)%3;
+    this.logo=this.imgs[this.imgIndex];
+  }
 }
