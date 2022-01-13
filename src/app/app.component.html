@@ -1,4 +1,17 @@
 <h1>{{title}}</h1>
 <div>
-  <img [alt] = "na" [src]="logo" (click)="toggleLogo()">
+  <img [alt] = "na" [src]="logo" 
+    (click)="toggleLogo()"
+    [style.width.px]="imgWidth"
+    [class]="{'centered':applyCenter,'bordered':applyBorder,'roundCornered':applyRoundCorner}"/>
+</div>
+
+<div>
+  <form>
+    <input type="text" name="tb1" [(ngModel)]="title"><br/>
+    <input type="range" name="r1" [(ngModel)]="imgWidth" min="100" max="1000">
+    <br/> <label><input type="checkbox" name="c1" [(ngModel)]="applyCenter"/></label>
+    <br/> <label><input type="checkbox" name="c2" [(ngModel)]="applyBorder"/></label>
+    <br/> <label><input type="checkbox" name="c3" [(ngModel)]="applyRoundCorner"/></label>
+  </form>
 </div>

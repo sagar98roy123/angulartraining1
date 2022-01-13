@@ -12,6 +12,11 @@ export class AppComponent {
   na:string;
   imgIndex:number;
 
+  imgWidth:number;
+  applyCenter:boolean;
+  applyBorder:boolean;
+  applyRoundCorner:boolean;
+
   constructor(){
     this.title="My First Angular project";
     this.imgs=[
@@ -22,6 +27,12 @@ export class AppComponent {
     this.imgIndex=0;
     this.logo=this.imgs[this.imgIndex];
     this.na="Not Available"
+
+    this.imgWidth=500;
+    this.applyCenter=true;
+    this.applyBorder=true;
+    this.applyRoundCorner=false;
+
   }
   toggleLogo(){
     this.imgIndex=(this.imgIndex+1)%3;
